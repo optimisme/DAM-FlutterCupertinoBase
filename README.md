@@ -8,7 +8,7 @@ cd cupertino_base
 flutter clean
 flutter create . --platforms=macos
 
-## Clone and create a project
+## Clone and create a different project
 
 For example to create a new GitHub project named FT04-Stacks
 
