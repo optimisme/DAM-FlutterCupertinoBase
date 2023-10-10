@@ -2,7 +2,13 @@
 
 This project is a starting point for a Flutter application with a Cupertino look and feel.
 
-## Getting Started, clone and create a project
+## Getting Starte
+
+cd cupertino_base
+flutter clean
+flutter create . --platforms=macos
+
+## Clone and create a project
 
 For example to create a new GitHub project named FT04-Stacks
 
