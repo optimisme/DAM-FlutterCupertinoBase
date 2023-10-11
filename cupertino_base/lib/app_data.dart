@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppData with ChangeNotifier {
+  // Access appData globaly with:
+  // AppData appData = Provider.of<AppData>(context);
+  // AppData appData = Provider.of<AppData>(context, listen: false)
+
   bool readyExample = false;
 
   late dynamic dataExample;
