@@ -2,9 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'vnt_button.dart';
 
 class LayoutDesktop extends StatefulWidget {
-  const LayoutDesktop({super.key, required this.title});
-
-  final String title;
+  const LayoutDesktop({super.key});
 
   @override
   State<LayoutDesktop> createState() => _LayoutDesktopState();
@@ -22,8 +20,8 @@ class _LayoutDesktopState extends State<LayoutDesktop> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        middle: Text(widget.title),
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text("Layout Desktop"),
       ),
       child: Center(
         child: Column(

@@ -17,9 +17,9 @@ class AppState extends State<App> {
     // Set different layouts depending on the screen width
     double width = MediaQuery.of(context).size.width;
     if (width >= 600) {
-      return const LayoutDesktop(title: "App Desktop Title");
+      return const LayoutDesktop();
     } else {
-      return const LayoutMobile(title: "App Mobile Title");
+      return const LayoutMobile(title: "Layout Mobile");
     }
   }
 
