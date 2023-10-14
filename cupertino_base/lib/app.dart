@@ -29,7 +29,7 @@ class AppState extends State<App> {
     // Farem servir la base 'Cupertino'
     return CupertinoApp(
       debugShowCheckedModeBanner: false,
-      theme: CupertinoThemeData(brightness: Brightness.light),
+      theme: const CupertinoThemeData(brightness: Brightness.light),
       home: _setLayout(context),
     );
   }

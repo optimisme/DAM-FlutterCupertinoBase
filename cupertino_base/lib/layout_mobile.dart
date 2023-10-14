@@ -32,15 +32,15 @@ class _LayoutMobileState extends State<LayoutMobile> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Flexible(
-                    child: const Text(
+                  const Flexible(
+                    child: Text(
                       'Click on decrement to decrease the counter: ',
                     ),
                   ),
                   // Add text with the counter
                   Text(
                     ' $_counter',
-                    style: TextStyle(fontSize: 20),
+                    style: const TextStyle(fontSize: 20),
                   ),
                 ],
               ),
