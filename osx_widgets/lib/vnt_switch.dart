@@ -39,8 +39,8 @@ class VNTSwitchState extends State<VNTSwitch> {
               left: widget.value ? 24.0 : 0.0, // Canvia la posició del cercle
               right: widget.value ? 0.0 : 24.0,
               child: Container(
-                height: 24.0,
-                width: 24.0,
+                height: 22.0,
+                width: 22.0,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: Colors.white,
