@@ -30,13 +30,11 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    // Registra l'observer
     WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
-    // Cancel·la el registre de l'observer
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -66,14 +64,20 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     BoxDecoration decoration;
     TextStyle textStyle;
+    BoxShadow shadow = BoxShadow(
+      color: Colors.black.withOpacity(0.1),
+      spreadRadius: 0,
+      blurRadius: 1,
+      offset: const Offset(0, 1),
+    );
 
     if (widget.isDisabled) {
       switch (widget.style) {
         case VNTButtonStyle.action:
           decoration = BoxDecoration(
-            color: const Color.fromRGBO(112, 175, 250, 1),
-            borderRadius: BorderRadius.circular(8.0),
-          );
+              color: const Color.fromRGBO(112, 175, 250, 1),
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [shadow]);
           textStyle = const TextStyle(
             fontSize: _fontSize,
             color: Color.fromRGBO(92, 143, 203, 1),
@@ -83,9 +87,9 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
         case VNTButtonStyle.normal:
         case VNTButtonStyle.destructive:
           decoration = BoxDecoration(
-            color: const Color.fromRGBO(247, 247, 247, 1),
-            borderRadius: BorderRadius.circular(8.0),
-          );
+              color: const Color.fromRGBO(247, 247, 247, 1),
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [shadow]);
           textStyle = const TextStyle(
             fontSize: _fontSize,
             color: Color.fromRGBO(190, 190, 190, 1),
@@ -97,20 +101,20 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
         case VNTButtonStyle.action:
           if (_hasAppFocus) {
             decoration = BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  _isPressed
-                      ? const Color.fromRGBO(25, 124, 245, 1)
-                      : const Color.fromRGBO(35, 134, 255, 1),
-                  _isPressed
-                      ? const Color.fromRGBO(0, 98, 236, 1)
-                      : const Color.fromRGBO(0, 111, 254, 1),
-                ],
-              ),
-              borderRadius: BorderRadius.circular(8.0),
-            );
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    _isPressed
+                        ? const Color.fromRGBO(25, 124, 245, 1)
+                        : const Color.fromRGBO(35, 134, 255, 1),
+                    _isPressed
+                        ? const Color.fromRGBO(0, 98, 236, 1)
+                        : const Color.fromRGBO(0, 111, 254, 1),
+                  ],
+                ),
+                borderRadius: BorderRadius.circular(8.0),
+                boxShadow: [shadow]);
             textStyle = TextStyle(
               fontSize: _fontSize,
               color: _isPressed
@@ -119,10 +123,10 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
             );
           } else {
             decoration = BoxDecoration(
-              color: _isPressed ? Colors.grey.shade200 : Colors.white,
-              border: Border.all(color: Colors.grey.shade300),
-              borderRadius: BorderRadius.circular(8.0),
-            );
+                color: _isPressed ? Colors.grey.shade200 : Colors.white,
+                border: Border.all(color: Colors.grey.shade300),
+                borderRadius: BorderRadius.circular(8.0),
+                boxShadow: [shadow]);
             textStyle = const TextStyle(
               fontSize: _fontSize,
               color: Colors.black,
@@ -132,10 +136,10 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
 
         case VNTButtonStyle.destructive:
           decoration = BoxDecoration(
-            color: _isPressed ? Colors.grey.shade200 : Colors.white,
-            border: Border.all(color: Colors.grey.shade300),
-            borderRadius: BorderRadius.circular(8.0),
-          );
+              color: _isPressed ? Colors.grey.shade200 : Colors.white,
+              border: Border.all(color: Colors.grey.shade300),
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [shadow]);
           textStyle = const TextStyle(
             fontSize: _fontSize,
             color: Colors.red,
@@ -144,10 +148,10 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
 
         default:
           decoration = BoxDecoration(
-            color: _isPressed ? Colors.grey.shade200 : Colors.white,
-            border: Border.all(color: Colors.grey.shade300),
-            borderRadius: BorderRadius.circular(8.0),
-          );
+              color: _isPressed ? Colors.grey.shade200 : Colors.white,
+              border: Border.all(color: Colors.grey.shade300),
+              borderRadius: BorderRadius.circular(8.0),
+              boxShadow: [shadow]);
           textStyle = const TextStyle(
             fontSize: _fontSize,
             color: Colors.black,
@@ -173,9 +177,7 @@ class VNTButtonState extends State<VNTButton> with WidgetsBindingObserver {
               : const EdgeInsets.fromLTRB(8, 4, 8, 6),
           child: DefaultTextStyle(
             style: textStyle,
-            child: widget.isLarge
-                ? Expanded(child: Center(child: widget.child))
-                : widget.child,
+            child: widget.isLarge ? Center(child: widget.child) : widget.child,
           ),
         ),
       ),

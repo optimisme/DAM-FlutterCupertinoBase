@@ -42,7 +42,7 @@ class WidgetSidebarsState extends State<WidgetSidebars> {
       children: [
         // Left Sidebar
         Container(
-          color: const Color.fromRGBO(234, 228, 226, 1),
+          color: Color.fromRGBO(234, 228, 226, 1),
           width: width,
           child: widget.left,
         ),
@@ -61,7 +61,7 @@ class WidgetSidebarsState extends State<WidgetSidebars> {
                   color: Colors.black.withOpacity(0.3),
                   spreadRadius: 0,
                   blurRadius: 2,
-                  offset: const Offset(0, 2),
+                  offset: Offset(0, 2),
                 ),
               ],
             ),
