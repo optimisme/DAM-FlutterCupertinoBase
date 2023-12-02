@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_cupertino_desktop_kit/cdk_widgets.dart';
+import 'package:flutter_cupertino_desktop_kit/cdk.dart';
 import 'layout_desktop.dart';
 import 'layout_mobile.dart';
 
@@ -19,10 +19,9 @@ class AppState extends State<App> {
     double width = MediaQuery.of(context).size.width;
     if (width > 600) {
       return const CDKApp(
-        defaultAppearance: "system", // system, light, dark
-        defaultColor:
-          "systemBlue", 
-        child: LayoutDesktop(title: "App Desktop Title"));
+          defaultAppearance: "system", // system, light, dark
+          defaultColor: "systemBlue",
+          child: LayoutDesktop(title: "App Desktop Title"));
     } else {
       return const CupertinoApp(
         debugShowCheckedModeBanner: false,
