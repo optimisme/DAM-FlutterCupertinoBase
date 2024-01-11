@@ -5,7 +5,7 @@ import 'layout_mobile.dart';
 
 // Main application widget
 class App extends StatefulWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   AppState createState() => AppState();
