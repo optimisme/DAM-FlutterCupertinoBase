@@ -1,6 +1,9 @@
 Exemple de path:
-export PATH="$PATH:${HOME}/Documents/Projects/flutter/flutter/bin/"
+export PATH="$PATH:${HOME}/Documents/Projects/flutter/bin/"
 
 flutter pub upgrade --major-versions
 
 flutter run -d macos --enable-impeller
+
+Esborrar arxius innecessaris:
+find ./ -type d \( -name "build" -o -name ".dart_tool" \) -exec rm -rf {} +
